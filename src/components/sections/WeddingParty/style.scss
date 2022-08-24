@@ -1,0 +1,103 @@
+.wedding-party__container {
+  // border: 1px ridge goldenrod;
+  border-radius: 8px;
+  text-align: center;
+  padding-top: 60px;
+
+  .wedding-party {
+    display: flex;
+    padding: 15px 20px;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 12px;
+    margin: 0 auto;
+    justify-content: space-around;
+
+    .sub-title {
+      color: goldenrod;
+      background: black;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid goldenrod;
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+
+      .vl {
+        border-left: none;
+        border-top: 1px solid rgba(218, 165, 32, 0.637);
+        width: 60%;
+        height: 1px;
+        margin: auto;
+      }
+    }
+  }
+
+  .flower-girl {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    padding-bottom: 75px;
+
+    .sub-title {
+      color: goldenrod;
+      background: white;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid goldenrod;
+      margin-bottom: 5px;
+      font-size: 30px;
+      font-weight: normal;
+    }
+  }
+
+  .wedding-party__grid-item {
+    font-size: 30px;
+    width: fit-content;
+    width: 400px;
+
+    .wedding-party__title {
+      color: goldenrod;
+      background: white;
+      border-radius: 8px;
+      padding: 8px;
+      border: 1px solid goldenrod;
+      margin-bottom: 5px;
+    }
+
+    .wedding-party__name {
+      color: black;
+    }
+
+    .wedding-party__description {
+      img {
+        width: 400px;
+        height: 400px;
+        border-radius: 8px;
+        border: 1px solid goldenrod;
+        background-size: cover;
+        object-fit: cover;
+        object-position: center;
+
+        @media (max-width: 800px) {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: 800px) {
+      width: 100%;
+    }
+  }
+
+  .vl {
+    border-left: 1px solid rgba(218, 165, 32, 0.637);
+    height: 1000px;
+    width: fit-content;
+    margin: auto 0;
+  }
+}

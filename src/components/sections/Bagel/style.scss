@@ -1,0 +1,83 @@
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+
+    .gallery-item {
+        margin: 10px auto;
+        img {
+            cursor: pointer;
+            max-height: 600px;
+            max-width: 100%;
+            &:hover {
+                transform: scale(1.01);
+                transition: .5s ease-in-out all;
+            }
+        }
+    }
+
+    @media (max-width: 528px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+// ImageViewer.js
+
+.image-viewer {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255,255,255,0.9));
+
+    .modal-content {
+        max-width: 500px;
+        max-height: 700px;
+        border-radius: 8px;
+        outline: none;
+        border: none;
+        position: relative;
+
+        .close-button {
+            padding: none;
+            color: goldenrod;
+            position: absolute;
+            top: 0;
+            right: 20px;
+            font-size: 50px;
+            cursor: pointer;
+
+            .close-button-icon {
+                padding: 5px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: linen;
+            }
+        }
+
+        img {
+            max-width: 500px;
+            max-height: 700px;
+            border-radius: 6px;
+        }
+
+        @media (max-width: 600px) {
+            max-width: 400px;
+            max-height: 500px;
+
+            img {
+                max-width: 300px;
+                max-height: 400px;
+            }
+        }
+    }
+
+}

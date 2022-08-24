@@ -1,0 +1,137 @@
+.home-title {
+  color: black;
+  text-align: center;
+  letter-spacing: 6px;
+  margin: 0 auto;
+  background-image: url("../../../assets/img/image-1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px ridge goldenrod;
+  position: relative;
+  opacity: 0.8;
+  min-height: 600px;
+  height: 85vh;
+  background-position: bottom;
+  border-radius: 8px;
+
+  .big-text {
+    font-size: 70px;
+    font-weight: 400;
+    padding: 30px;
+
+    @media (max-width: 568px) {
+      font-size: 32px;
+    }
+  }
+  .small-text {
+    font-size: 30px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    padding: 20px;
+
+    @media (max-width: 568px) {
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    min-height: 900px;
+  }
+}
+
+.about-us {
+  border-radius: 24px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 75px;
+
+  .our-story {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+
+    .our-story-row {
+      display: flex;
+      flex-direction: column;
+      width: 500px;
+      min-height: 100%;
+      border-radius: 8px;
+      // padding: 10px;
+      border: 1px ridge goldenrod;
+      background-color: whitesmoke;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        // margin: 10px auto;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 6px 6px 0px 0px;
+          object-fit: cover;
+        }
+      }
+
+      .text {
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        padding: 8px;
+        display: flex;
+        flex-direction: column;
+        grid-gap: 10px;
+
+        .subheader {
+          font-size: 26px;
+          font-weight: 400;
+          margin: 10px 0;
+        }
+        .subheader-break {
+          border-style: ridge;
+          height: 1px;
+          width: 100%;
+        }
+        .subheader-small {
+          font-size: 20px;
+          font-style: italic;
+        }
+        .description {
+          font-size: 20px;
+          word-wrap: break-word;
+          margin: 10px 0;
+        }
+
+        @media (max-width: 568px) {
+          .subheader {
+            font-size: 24px;
+          }
+        }
+      }
+
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+
+      @media (max-width: 568px) {
+        grid-template-columns: 1fr;
+        .subheader {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .gallery-break {
+    display: inline-block;
+    margin: 0 50%;
+    border-left: 5px dotted rgba(218, 165, 32, 0.37);
+    height: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: 900px) {
+    width: 100%;
+  }
+}

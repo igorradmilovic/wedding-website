@@ -1,0 +1,303 @@
+// Main styling page for the application
+// Created: 9/29/21; 2:50 PM
+
+/* Table of Contents */
+
+/* 1. General */
+html,
+body {
+  background: rgb(240, 240, 240);
+  color: black;
+  // font-family: "Cormorant Garamond", serif;
+  font-family: "Baskerville", serif;
+}
+
+hr {
+  border-top: 1px solid goldenrod;
+  margin: 0px auto;
+}
+
+.section {
+  margin: 0px 12px;
+  min-height: 100vh;
+
+  @media (max-width: 928px) {
+    margin-top: 100px;
+  }
+}
+
+.sub-title {
+  font-size: 36px;
+  font-weight: 500;
+
+  &.section-header {
+    font-weight: unset;
+    font-size: 42px;
+  }
+
+  @media (max-width: 528px) {
+    font-size: 28px;
+
+    &.section-header {
+      font-size: 34px;
+    }
+  }
+}
+
+.sub-text {
+  font-size: 20px;
+  text-align: justify;
+}
+
+/* 2. Header */
+.header {
+  font-size: 36px;
+  letter-spacing: 2px;
+  display: flex;
+  grid-gap: 28px;
+  justify-content: space-between;
+  padding: 12px 12px;
+  margin: 5px 0;
+  background-color: rgb(240, 240, 240);
+  align-items: center;
+  top: 0;
+  width: 100%;
+  border-radius: 8px;
+
+  a {
+    color: unset;
+    text-decoration: none;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+
+    .nav-item {
+      cursor: pointer;
+      color: black;
+      margin: auto 20px;
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: goldenrod;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+
+  .nav-mobile {
+    display: none;
+
+    & .nav-mobile-content {
+      position: absolute;
+      border: 1px solid goldenrod;
+      border-radius: 8px;
+      top: 75px;
+      right: 25px;
+      width: 200px;
+      background-color: white;
+      z-index: 1;
+
+      .nav-brand {
+        text-align: left;
+        margin: 0 auto;
+        padding: 10px 8px;
+      }
+
+      .nav-item {
+        padding: 10px 8px;
+
+        &:hover,
+        &:focus,
+        &:active,
+        &.selected {
+          background-color: goldenrod;
+          color: white;
+          outline: none;
+        }
+      }
+    }
+
+    .nav-hamburger-icon {
+      cursor: pointer;
+      padding: 20px;
+
+      div {
+        width: 25px;
+        height: 1px;
+        background-color: black;
+        margin: 6px 0;
+      }
+
+      &:hover,
+      &:focus {
+        div {
+          background-color: goldenrod;
+        }
+      }
+    }
+  }
+
+  .nav-brand {
+    justify-items: flex-start;
+    color: black;
+    // font-family: "Fleur De Leah", cursive;
+    font-family: "Great Vibes", cursive;
+    font-size: 50px;
+
+    @media (max-width: 1200px) {
+      font-size: 38px;
+    }
+
+    @media (max-width: 528px) {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 928px) {
+    position: fixed;
+    z-index: 100;
+    margin-top: 0;
+    .nav {
+      display: none;
+    }
+    .nav-mobile {
+      display: block;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 24px;
+  }
+}
+
+/* 3. Footer */
+.footer {
+  height: 100%;
+  padding: 30px;
+  background-color: rgb(24, 24, 24);
+  color: goldenrod;
+  margin: 12px;
+  margin-top: 50px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 20px;
+
+  @media (min-width: 1600px) {
+    font-size: 26px;
+  }
+}
+
+/* 4. Floating Icon */
+.floating-icon-circle {
+  position: fixed;
+  display: block;
+  z-index: 1;
+  right: 25px;
+  bottom: 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  animation: pulse 2s;
+  animation-delay: 10s;
+  animation-iteration-count: 10;
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 1px rgb(109, 109, 109);
+    border: 0.5px outset goldenrod;
+    object-fit: cover;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loader */
+.loader-section {
+  background-color: rgba(238, 238, 238, 0.795);
+
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  &.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.lds-heart {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+.lds-heart div {
+  top: 0;
+  left: -50px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: rgb(223, 149, 162);
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: rgb(223, 149, 162);
+}
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+  5% {
+    transform: scale(1.1);
+  }
+  39% {
+    transform: scale(0.85);
+  }
+  45% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
